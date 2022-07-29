@@ -1,12 +1,27 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+  
+  <BeseHeader />
+
+  
+  <router-view />
+
+
   </div>
 </template>
+
+<script>
+import BeseHeader from './components/BeseHeader.vue'
+
+
+export default {
+    name:"App",
+    components:{
+        BeseHeader,
+
+    }   
+}
+</script>
 
 <style>
 #app {
