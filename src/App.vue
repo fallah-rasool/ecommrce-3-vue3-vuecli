@@ -1,28 +1,34 @@
 <template>
   <div id="app">
   
-  <BeseHeader />
-
+  <BeseHeader @show-sidBar="handelSidbar"/>
   
   <router-view />
 
+  <BeasFooter  :showSidbar="isShowsidBar"/>
 
   </div>
 </template>
 
 <script>
 import BeseHeader from './components/BeseHeader.vue'
-
-
+import BeasFooter from './components/BeasFooter.vue'
 export default {
     name:"App",
+    data:()=>({
+      isShowsidBar:false
+    }),
     components:{
         BeseHeader,
-
-    }   
+        BeasFooter
+    },
+    methods:{
+      handelSidbar(showsidbar){       
+        this.isShowsidBar = showsidbar;
+      }
+    }
 }
 </script>
-
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

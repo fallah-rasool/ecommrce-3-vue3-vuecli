@@ -1,5 +1,21 @@
 <template>
 <main class="main">
+        <!-- start header__top -->
+          <div class="header__top">
+            <div class="header__top-content">
+                <h1 class="header__top-h1">وب آموز : پلی برای یادگیری</h1>
+                <p class="header__top-p">با کمترین هزینه حرفه ای شو</p>
+            </div>
+            <form class="header__form">
+                <div class="header__search">
+                    <input type="text" class="header__serach-input" placeholder="جستجو کنید...">
+                    <button class="header__search-btn btn btn--brand btn--boxshadow"></button>
+                </div>
+            </form>
+        </div>
+        <!-- end header__top -->
+
+        
     <div class="container">
         <div class="slideshow">
             <a 
@@ -17,15 +33,60 @@
                     </div>
             </div>
         </div>
+
+         <SwiperSlider>
+              <template v-slot:title>
+                موبایل
+              </template>
+              <a href="product.html" class="swiper-slide"
+               v-for="item in 6" :key="item">
+                    <div class="slider__box">
+                        <div class="slider__image">
+                        <img :src="require(`../assets/img/slider/mobil/${item}.jpg`)" alt="" class="slider__img">
+                        </div>
+                        <div class="slider__title2">
+                            گوشی موبایل سامسونگ مدل نوت 20
+                        </div>
+                        <div class="slider__price">
+                            <span class="slider__compare-price">12,200,000</span>
+                            <span class="slider__total-price">12,400,000 تومان</span>
+                        </div>
+                        <span class="slider__discount">%6</span>
+                    </div>
+                </a>
+         </SwiperSlider>
+
+   <SwiperSlider>
+              <template v-slot:title>
+                لب تاب
+              </template>
+              <a href="product.html" class="swiper-slide" v-for="item in 6" :key="item">
+                    <div class="slider__box">
+                        <div class="slider__image"><img :src="require(`../assets/img/slider/labtab/${item}.jpg`)" alt="" class="slider__img"></div>
+                        <div class="slider__title2">
+                            گوشی موبایل سامسونگ مدل نوت 20
+                        </div>
+                        <div class="slider__price">
+                            <span class="slider__compare-price">12,200,000</span>
+                            <span class="slider__total-price">12,400,000 تومان</span>
+                        </div>
+                        <span class="slider__discount">%6</span>
+                    </div>
+                </a>
+   </SwiperSlider>
+
+
     </div>
 </main>
 </template>
 
 <script>
+import SwiperSlider from '../components/SwiperSlider.vue'
 export default {
   name: 'HomeView',
   components: {
-   },
+    SwiperSlider
+  },
   data:()=>({
 
     sliderShowIndex:0,
