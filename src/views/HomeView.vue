@@ -84,6 +84,10 @@
 import SwiperSlider from '../components/SwiperSlider.vue'
 export default {
   name: 'HomeView',
+   metaInfo:{
+            title:"صفحه اصلی  "
+        },
+
   components: {
     SwiperSlider
   },
@@ -98,7 +102,8 @@ export default {
       {img :(require('../assets/img/slideshow/2.png'))},             
       {img :(require('../assets/img/slideshow/3.png'))},            
       {img :(require('../assets/img/slideshow/4.png'))},
-    ]}),
+    ]
+    }),
   methods:{
     move(n){
       //console.log(n)

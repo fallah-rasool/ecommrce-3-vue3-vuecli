@@ -15,7 +15,7 @@
                 <!-- start header__logo -->          
                 <div class="header__logo">
 
-                        <router-link :to="{to:'Home'}" 
+                        <router-link :to="{name:'home'}" 
                         class="header__logo-img"> 
                         </router-link>
                 
@@ -30,14 +30,14 @@
                     <ul class="navbar__ul">
                         <li class="navbar__item">
 
-                        <router-link :to="{to:'Home'}" 
+                         <router-link :to="{name:'home'}" 
                         class="navbar__link navbar__link--is-active">صفحه اصلی
                         </router-link>
                         
                         </li>
                         <li class="navbar__item navbar__item--has-sub">
 
-                        <router-link :to="{to:'Home'}"  
+                        <router-link :to="{nmae:'home'}"  
                         class="navbar__link"
                         >فروشگاه</router-link>
 
@@ -61,7 +61,7 @@
                             </ul>
                         </li>
                         <li class="navbar__item">
-                        <router-link :to="{ to:'category' }"  
+                        <router-link :to="{ name:'category' }"  
                         class="navbar__link"
                         >دسته بندی</router-link>
                        
@@ -69,9 +69,15 @@
 
 
                         <li class="navbar__item">
-                        <a href="" class="navbar__link">درباره ما</a></li>
+                       <router-link :to="{ name:'about' }"
+
+                        class="navbar__link">درباره ما</router-link>
+                        </li>
                         <li class="navbar__item">
-                        <a href="" class="navbar__link">تماس باما</a></li>
+                        <router-link :to="{ name:'about' }" 
+
+                        class="navbar__link">تماس باما</router-link>
+                        </li>
                     </ul>
                 </div>
                 <!-- end  navbar__items -->
