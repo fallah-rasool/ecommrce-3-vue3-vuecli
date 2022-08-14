@@ -216,9 +216,7 @@
 <script>
 export default {
         name:"Category",
-        metaInfo:{
-            title:"دسته بندی"
-        },
+
         data:()=>({
             isBrandOpen:true,
             isColorOpen:true,

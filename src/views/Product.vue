@@ -39,17 +39,10 @@
 
                                     <div 
                                         v-for="(slide,index) in gallerySlides" :key="index"
-                                         @click="showModal(slide.img)"
-                                       
-
+                                         @click="showModal(slide.img)"                                       
                                         :style="slideIndex === index ? 'display: flex;' : 'display:none;'"
-                                        class="pdSlide" 
-
-                                    >
-                                        <img 
-                                          
-                                            :src="slide.img"
-                                        >
+                                        class="pdSlide">
+                                        <img :src="slide.img" >
                                     </div>
 
                              
@@ -140,21 +133,7 @@
 
 
                                 <div class="controls">
-                                    <Multiselect
-                                        :options="colorsOptions"
-                                        v-model="selectedColor"
-                                        placeholder="گزینه خود را انتخاب کنید"
-                                    />
-                                    <Multiselect v-model="selectedLang"
-                                        :options="langOptions"
-                                        :multiple="true"                                        
-                                        :close-on-select="false" 
-                                        :clear-on-select="false" 
-                                        
-                                        label="name"
-                                        track-by="name" 
-                                        placeholder="گزینه خود را انتخاب کنید"
-                                    />
+    
 
                                 </div>
 
@@ -266,10 +245,10 @@ import Fields from '../components/productTab/Fields.vue'
 import Comments from '../components/productTab/Comments.vue'
 
 import moment from 'moment'
-import jalaali from 'moment-jalaali'
-import Multiselect from 'vue-multiselect'
 
-import 'vue-multiselect/dist/vue-multiselect.min.css'
+
+
+
 
 import '../assets/css/modal.css'
 
@@ -277,17 +256,14 @@ export default {
 
     name:"Product",
     components: {
-        Multiselect,
         SwiperSlider,
         Details,
         Fields,
         Comments
     },
-    metaInfo:{
-            title:"نمایش محصول "
-    },
+
     data:()=>({
-            dateNow_Jalaali:jalaali().format('jYYYY/jM/jD'),
+        
 
            
             dataCountDown:moment('2022-08-20 00:00:00'),   
@@ -331,11 +307,11 @@ export default {
             modalImage:null,
             rateWidth: 0,
             showRate: true,
-            slides:[
-                {img :(require('../assets/img/slideshow/1.png'))},            
-                {img :(require('../assets/img/slideshow/2.png'))},             
-                {img :(require('../assets/img/slideshow/3.png'))},            
-                {img :(require('../assets/img/slideshow/4.png'))},
+        slides:[
+            {img :(require('../assets/img/slideshow/1.png'))},            
+            {img :(require('../assets/img/slideshow/2.png'))},             
+            {img :(require('../assets/img/slideshow/3.png'))},            
+            {img :(require('../assets/img/slideshow/4.png'))},
             ],
             activeTab:'tab-box_1'
     }),
@@ -355,7 +331,7 @@ export default {
     },
 
 
-    destroyed(){
+    unmounted(){
         clearInterval(this.timeInterval)
     },
 

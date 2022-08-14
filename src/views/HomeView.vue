@@ -84,9 +84,7 @@
 import SwiperSlider from '../components/SwiperSlider.vue'
 export default {
   name: 'HomeView',
-   metaInfo:{
-            title:"صفحه اصلی  "
-        },
+
 
   components: {
     SwiperSlider
@@ -127,7 +125,7 @@ export default {
           }
         }, 15);
   },
-  destroyed(){
+  unmounted(){
     clearInterval(this.sliderInterval)
   }
 }

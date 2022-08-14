@@ -16,8 +16,7 @@
                 <div class="header__logo">
 
                         <router-link :to="{name:'home'}" 
-                        class="header__logo-img"> 
-                        </router-link>
+                        class="header__logo-img">   </router-link>
                 
                 </div>
                 <!-- end header__logo -->
@@ -37,14 +36,13 @@
                         </li>
                         <li class="navbar__item navbar__item--has-sub">
 
-                        <router-link :to="{nmae:'home'}"  
-                        class="navbar__link"
-                        >فروشگاه</router-link>
+                        <router-link :to="{nmae:'home'}"  class="navbar__link">فروشگاه</router-link>
 
                             <ul class="navbar__subset">
                                 <li class="navbar__item"><a href="" class="navbar__link">زیر منو 1</a></li>
                                 <li class="navbar__item"><a href="" class="navbar__link">زیر منو 2</a></li>
-                                <li class="navbar__item navbar__item--has-sub"><a href="" class="navbar__link">زیر منو 3</a>
+                                <li class="navbar__item navbar__item--has-sub">
+                                <a href="" class="navbar__link">زیر منو 3</a>
 
                                     <ul class="navbar__subset">
                                         <li class="navbar__item"><a href="" class="navbar__link">زیر منو 1</a></li>
@@ -61,8 +59,7 @@
                             </ul>
                         </li>
                         <li class="navbar__item">
-                        <router-link :to="{ name:'category' }"  
-                        class="navbar__link"
+                        <router-link :to="{ name:'category' }"    class="navbar__link"
                         >دسته بندی</router-link>
                        
                         </li>

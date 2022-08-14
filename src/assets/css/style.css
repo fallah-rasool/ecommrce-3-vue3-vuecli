@@ -500,7 +500,10 @@ ul li {
 }
 
 .slideshow__prev {
-    left: 0
+    left: 0;
+}
+.slideshow__next {
+    right: 0;
 }
 
 .slideshow:hover .slideshow__prev {

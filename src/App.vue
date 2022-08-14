@@ -15,13 +15,6 @@ import BeseHeader from './components/BeseHeader.vue'
 import BeasFooter from './components/BeasFooter.vue'
 export default {
     name:"App",
-    metaInfo: {
-
-      title: ' فروشگاه زنبیل',
-
-      titleTemplate: ' زنبیل شاپ / %s '
-    },
-
 
     data:()=>({
       isShowsidBar:false
