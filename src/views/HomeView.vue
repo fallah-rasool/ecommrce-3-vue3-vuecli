@@ -38,7 +38,8 @@
               <template v-slot:title>
                 موبایل
               </template>
-              <a href="product.html" class="swiper-slide"
+               <router-link :to="{ name :'product' ,params:{id : item}}"
+              class="swiper-slide"
                v-for="item in 6" :key="item">
                     <div class="slider__box">
                         <div class="slider__image">
@@ -53,16 +54,18 @@
                         </div>
                         <span class="slider__discount">%6</span>
                     </div>
-                </a>
+                </router-link>
          </SwiperSlider>
 
    <SwiperSlider>
               <template v-slot:title>
                 لب تاب
               </template>
-              <a href="product.html" class="swiper-slide" v-for="item in 6" :key="item">
+              <router-link :to="{ name :'product' ,params:{id : item}}" class="swiper-slide"
+               v-for="item in 6" :key="item">
                     <div class="slider__box">
-                        <div class="slider__image"><img :src="require(`../assets/img/slider/labtab/${item}.jpg`)" alt="" class="slider__img"></div>
+                        <div class="slider__image">
+                        <img :src="require(`../assets/img/slider/labtab/${item}.jpg`)" alt="" class="slider__img"></div>
                         <div class="slider__title2">
                             گوشی موبایل سامسونگ مدل نوت 20
                         </div>
@@ -72,7 +75,7 @@
                         </div>
                         <span class="slider__discount">%6</span>
                     </div>
-                </a>
+                </router-link>
    </SwiperSlider>
 
 

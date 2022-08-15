@@ -174,13 +174,13 @@
 
                     <div class="row no-gutters">
                         <div class="col-4 bm-15" 
-                        v-for="item in 12" :key="item">
+                        v-for="(item, index) in products" :key="item.id">
 
                             <div class="c-product-box">
                            
-                               <router-link :to="{ name :'product' ,params:{id : item}}"
+                               <router-link :to="{ name :'product' ,params:{id : index}}"
                                  class="c-product-box__link">
-                                    <img :src="require(`../assets/img/banner/mobile/${item}.jpg`)" 
+                                    <img :src="require(`../assets/img/banner/mobile/${item.id}.jpg`)" 
 
                                     class="c-product-box__img" alt="">
                                  </router-link>
@@ -190,15 +190,14 @@
 
                                 <div class="c-product-box__title">
 
-                                        <router-link :to="{ name:'product' ,params:{id : item}}">
-                                        کامپیوتر همه کاره  
-                                            اینچی لنوو مدل 
+                                        <router-link :to="{ name:'product' ,params:{id : index}}">
+                                        {{item.name}} 
                                         </router-link>
                                 </div>
 
                                 <div class="c-product-box__price">
                                     <span class="c-product-box__compare-price">13,200,000</span>
-                                    <span class="c-product-box--price"><span>12,500,000 تومان</span></span>
+                                    <span class="c-product-box--price"><span>{{ item.price }} تومان</span></span>
                                 </div>
                                 <span class="c-product-box__discount">6٪</span>
                             </div>
@@ -222,6 +221,16 @@ export default {
             isColorOpen:true,
             selectFilter:[]
         }),
+        computed:{
+            products(){
+                return this.$store.state.products
+            }
+        },
+
+        created(){
+               this.$store.dispatch('getProducts')
+        },
+
         methods:{
             removeAll(){
                  this.selectFilter=[]

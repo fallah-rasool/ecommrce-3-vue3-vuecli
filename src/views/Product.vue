@@ -263,9 +263,7 @@ export default {
     },
 
     data:()=>({
-        
-
-           
+                  
             dataCountDown:moment('2022-08-20 00:00:00'),   
             diffDay:null,
             diffHours:null,
@@ -327,6 +325,9 @@ export default {
                 this.diffMinutes =  durationTime.minutes()
                 this.diffSeconds =  durationTime.seconds()
                 }, 1000);
+
+
+      
   
     },
 
@@ -368,7 +369,7 @@ export default {
            
         this.showRate = true
         },
-    
+
 
   },
 }

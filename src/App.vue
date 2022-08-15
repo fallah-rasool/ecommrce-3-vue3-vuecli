@@ -27,6 +27,11 @@ export default {
       handelSidbar(showsidbar){       
         this.isShowsidBar = showsidbar;
       }
+    },
+    created(){
+        console.log(
+          this.$store.state.products
+        )
     }
 }
 </script>

@@ -35,7 +35,7 @@
                                                         <div class="row no-gutters item-center product-row flex-space-between">
                                                                 <div class="d-flex">
                                                                         <div class="col-auto c-avater">
-                                                                                <img src="img/profile.jpg" class="product-comment-avatar-image">
+                            <img src="@/assets/img/profile.jpg" class="product-comment-avatar-image">
                                                                         </div>
                                                                         <div class="col-7 product-comment-author-and-time">
                                                                                 <div class="d-flex item-center product-comment--author">
@@ -70,7 +70,7 @@
                                                         <div class="row no-gutters item-center product-row flex-space-between">
                                                                 <div class="d-flex">
                                                                 <div class="col-auto c-avater">
-                                                                        <img src="img/profile.jpg" class="product-comment-avatar-image">
+                                                                        <img src="@/assets/img/profile.jpg" class="product-comment-avatar-image">
                                                                 </div>
                                                                 <div class="col-7 product-comment-author-and-time">
                                                                         <div class="d-flex item-center product-comment--author">
@@ -102,7 +102,7 @@
                                                                         <div class="row no-gutters item-center product-row flex-space-between">
                                                                                 <div class="d-flex">
                                                                                         <div class="col-auto c-avater">
-                                                                                        <img src="img/profile.jpg" class="product-comment-avatar-image">
+                                                                                        <img src="@/assets/img/profile.jpg" class="product-comment-avatar-image">
                                                                                         </div>
                                                                                         <div class="col-7 product-comment-author-and-time">
                                                                                         <div class="d-flex item-center product-comment--author">
@@ -143,7 +143,7 @@
                                                 <div class="row no-gutters item-center product-row flex-space-between">
                                                         <div class="d-flex">
                                                         <div class="col-auto c-avater">
-                                                                <img src="img/profile.jpg" class="product-comment-avatar-image">
+                                                                <img src="@/assets/img/profile.jpg" class="product-comment-avatar-image">
                                                         </div>
                                                         <div class="col-7 product-comment-author-and-time">
                                                                 <div class="d-flex item-center product-comment--author">
@@ -176,7 +176,7 @@
                                                                                 <div class="row no-gutters item-center product-row flex-space-between">
                                                                                 <div class="d-flex">
                                                                                         <div class="col-auto c-avater">
-                                                                                        <img src="img/profile.jpg" class="product-comment-avatar-image">
+                                                                                        <img src="@/assets/img/profile.jpg" class="product-comment-avatar-image">
                                                                                         </div>
                                                                                         <div class="col-7 product-comment-author-and-time">
                                                                                         <div class="d-flex item-center product-comment--author">
@@ -209,20 +209,20 @@
                                                                                         <div class="product-comment-inner">
                                                                                                 <div class="product-comment-header border-bottom">
                                                                                                 <div class="row no-gutters item-center product-row flex-space-between">
-                                                                                                        <div class="d-flex">
-                                                                                                        <div class="col-auto c-avater">
-                                                                                                                <img src="img/profile.jpg" class="product-comment-avatar-image">
-                                                                                                        </div>
-                                                                                                        <div class="col-7 product-comment-author-and-time">
-                                                                                                                <div class="d-flex item-center product-comment--author">
-                                                                                                                <h5 class="product-comment-author font-size-15 post-full-comment-author">
-                                                                                                                        <span class="product-comment-name post-full-comment-name">ناشناس</span>
-                                                                                                                </h5>
-                                                                                                                </div>
-                                                                                                                <span class="product-comment-time font-size-12 post-full-comment-time">523 روز پیش</span>
-                                                                                                        </div>
-                                                                                                        </div>
-                                                                                                        <a href="#product-details" class="btn btn-brand reply-to-comment">ارسال پاسخ</a>
+                                                                <div class="d-flex">
+                                                                <div class="col-auto c-avater">
+                                                                        <img src="@/assets/img/profile.jpg" class="product-comment-avatar-image">
+                                                                </div>
+                                                                <div class="col-7 product-comment-author-and-time">
+                                                                        <div class="d-flex item-center product-comment--author">
+                                                                        <h5 class="product-comment-author font-size-15 post-full-comment-author">
+                                                                                <span class="product-comment-name post-full-comment-name">ناشناس</span>
+                                                                        </h5>
+                                                                        </div>
+                                                                        <span class="product-comment-time font-size-12 post-full-comment-time">523 روز پیش</span>
+                                                                </div>
+                                                                </div>
+                                                                <a href="#product-details" class="btn btn-brand reply-to-comment">ارسال پاسخ</a>
 
                                                                                                 </div>
                                                                                                 </div>
