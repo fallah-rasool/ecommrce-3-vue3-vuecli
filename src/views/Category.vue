@@ -164,7 +164,9 @@
                     </div>
                 </div>
             </div>
+            
             <div class="o-page__content">
+            <h1>{{ userName }}</h1>
                 <ul class="breadcrumb ">
                     <li class="breadcrumb-item"><a href=""><span class="">صفحه اصلی</span></a></li>
                     <li class="breadcrumb-item"><a href=""><span class="">فهرست محصولات</span></a></li>
@@ -184,8 +186,6 @@
 
                                     class="c-product-box__img" alt="">
                                  </router-link>
-
-
 
 
                                 <div class="c-product-box__title">
@@ -213,6 +213,7 @@
 </template>
 
 <script>
+import { mapState} from 'vuex'
 export default {
         name:"Category",
 
@@ -222,9 +223,13 @@ export default {
             selectFilter:[]
         }),
         computed:{
-            products(){
-                return this.$store.state.products
-            }
+            numberOne(){
+                return 1
+            },
+            ...mapState({
+                products:'products',
+                userName:state=>state.user.name
+            })
         },
 
         created(){

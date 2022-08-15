@@ -3,14 +3,17 @@ import { createStore } from 'vuex'
 import axios from 'axios'
 
 const store = createStore({
-  state () {
-    return {
-      products:[]
-    }
+
+  state: ()=> ({
+    products:[],
+    user:{name:"rasool", id:1}
+  }),
+  getters:{
+
   },
   mutations:{
         SET_PRODUCTS(state, data){
-                state.products = data
+            state.products = data
         }
   },
 
