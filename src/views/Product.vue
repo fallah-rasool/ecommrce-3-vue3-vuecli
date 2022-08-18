@@ -104,7 +104,7 @@
                             <div class="product__left">
                                 <div class="product__category">دسته وب</div>
                                 <div class="product__info">
-                                        <h1 class="product__title">محصول شماره یک یک شماره </h1>
+                                        <h1 class="product__title">  {{ product?.name }}   </h1>
 
                                         <div class="rating">
                                             <div class="rating__star">
@@ -311,13 +311,14 @@ export default {
             {img :(require('../assets/img/slideshow/3.png'))},            
             {img :(require('../assets/img/slideshow/4.png'))},
             ],
-            activeTab:'tab-box_1'
+            activeTab:'tab-box_1',
+            product:{}
     }),
 
 
     created(){
 
-      this.timeInterval =  setInterval(() => {
+        this.timeInterval =  setInterval(() => {
                 let diffTime= this.dataCountDown.diff(moment())
                 let durationTime= moment.duration(diffTime)
                 this.diffDay = Math.floor(durationTime.asDays()) 
@@ -325,8 +326,16 @@ export default {
                 this.diffMinutes =  durationTime.minutes()
                 this.diffSeconds =  durationTime.seconds()
                 }, 1000);
+                
+        this.product = this.$store.getters.getProductById(parseInt(this.$route.params.id))
 
+        if(!this.product){
 
+            this.$store.dispatch('getProducts')
+            .then(() => {
+              this.product = this.$store.getters.getProductById(parseInt(this.$route.params.id))
+            })
+        }
       
   
     },

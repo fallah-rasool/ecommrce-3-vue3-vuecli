@@ -176,21 +176,19 @@
 
                     <div class="row no-gutters">
                         <div class="col-4 bm-15" 
-                        v-for="(item, index) in products" :key="item.id">
+                        v-for="item in products" :key="item.id">
 
                             <div class="c-product-box">
                            
-                               <router-link :to="{ name :'product' ,params:{id : index}}"
+                               <router-link :to="{ name :'product' ,params:{id : item.id}}"
                                  class="c-product-box__link">
                                     <img :src="require(`../assets/img/banner/mobile/${item.id}.jpg`)" 
-
                                     class="c-product-box__img" alt="">
                                  </router-link>
 
-
                                 <div class="c-product-box__title">
 
-                                        <router-link :to="{ name:'product' ,params:{id : index}}">
+                                        <router-link :to="{ name:'product' ,params:{id :item.id}}">
                                         {{item.name}} 
                                         </router-link>
                                 </div>
@@ -213,7 +211,7 @@
 </template>
 
 <script>
-import { mapState} from 'vuex'
+import { mapGetters} from 'vuex'
 export default {
         name:"Category",
 
@@ -226,16 +224,15 @@ export default {
             numberOne(){
                 return 1
             },
-            ...mapState({
-                products:'products',
-                userName:state=>state.user.name
+            ...mapGetters({
+               products: 'products',
+               userName:'userName'
             })
+           
         },
-
         created(){
                this.$store.dispatch('getProducts')
         },
-
         methods:{
             removeAll(){
                  this.selectFilter=[]
