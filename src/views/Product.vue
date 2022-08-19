@@ -246,9 +246,11 @@ import Comments from '../components/productTab/Comments.vue'
 
 import moment from 'moment'
 
+import {mapMutations} from 'vuex'
 
+import axios from 'axios'
 
-
+import {SET_PRODUCTS_MUTATIONS } from '@/store/type'
 
 import '../assets/css/modal.css'
 
@@ -316,7 +318,7 @@ export default {
     }),
 
 
-    created(){
+  async created(){
 
         this.timeInterval =  setInterval(() => {
                 let diffTime= this.dataCountDown.diff(moment())
@@ -331,10 +333,21 @@ export default {
 
         if(!this.product){
 
-            this.$store.dispatch('getProducts')
-            .then(() => {
-              this.product = this.$store.getters.getProductById(parseInt(this.$route.params.id))
-            })
+            // this.$store.dispatch('getProducts')
+            // .then(() => {
+            //   this.product = this.$store.getters.getProductById(parseInt(this.$route.params.id))
+            // })
+
+              const { data }=await axios.get('https://gist.githubusercontent.com/Tefoh/57a0ef76ab63a974105b9f0fbcb8475b/raw/d49e3d8104992ff6cc6742fbe91b0c642287837a/products.json')
+
+              this.SET_PRODUCTS(data)
+
+
+          //  this.$store.commit(SET_PRODUCTS_MUTATIONS, data) 
+          //  this.$store.commit('SET_PRODUCTS_MUTATIONS', data) 
+
+             
+             this.product = this.$store.getters.getProductById(parseInt(this.$route.params.id))
         }
       
   
@@ -378,6 +391,8 @@ export default {
            
         this.showRate = true
         },
+
+        ...mapMutations([SET_PRODUCTS_MUTATIONS])
 
 
   },
