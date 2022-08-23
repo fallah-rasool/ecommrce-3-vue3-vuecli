@@ -211,7 +211,7 @@
 </template>
 
 <script>
-import { mapGetters} from 'vuex'
+import { mapGetters ,mapActions} from 'vuex'
 export default {
         name:"Category",
 
@@ -224,14 +224,24 @@ export default {
             numberOne(){
                 return 1
             },
-            ...mapGetters({
-               products: 'products',
-               userName:'userName'
-            })
+            // ...mapGetters({
+            //    products: 'products',
+            //    userName:'name'
+            // })
+
+              ...mapGetters('products',['products']),
+              ...mapGetters('userName',{userName:'name'})
            
         },
         created(){
-               this.$store.dispatch('getProducts')
+
+              this.$store.dispatch('products/getProducts',{text:"jhjhkkhkhkjhk"})
+             // this.getProducts({text:"jhjhkkhkhkjhk"})
+
+             
+             console.log(this.$store.getters['userName/name'])
+              console.log(this.$store.getters['products/name'])
+             
         },
         methods:{
             removeAll(){
@@ -240,7 +250,10 @@ export default {
             removeFilter(filter){
                     this.selectFilter=this.selectFilter.filter((item) => item !== filter
                 )
-            }
+            },
+           //...mapActions(['getProducts'])
+           ...mapActions('products',['getProducts'])
+
         }
 }
 </script>

@@ -250,7 +250,7 @@ import {mapMutations} from 'vuex'
 
 import axios from 'axios'
 
-import {SET_PRODUCTS_MUTATIONS } from '@/store/type'
+import {SET_PRODUCTS_MUTATIONS } from '@/store/modules/products/type'
 
 import '../assets/css/modal.css'
 
